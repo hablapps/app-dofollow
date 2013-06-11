@@ -19,7 +19,7 @@ Speech is implemented as an embedded DSL in Scala, so you must download it first
 
 Install sbt
 
-The app-twitter project is configured with the sbt build tool. To install sbt follow the instructions at https://github.com/sbt/sbt.
+The app-dofollow project is configured with the sbt build tool. To install sbt follow the instructions at https://github.com/sbt/sbt.
 
 Install speech
 
