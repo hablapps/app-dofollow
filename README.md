@@ -33,9 +33,11 @@ Download the Speech interpreter from the following address: http://speechlang.or
 
 #### Compile dofollow
 
+```shell
 $ cd <dofollow>
 $ sbt 
 > test:compile
+```
 
 ## Run dofollow
 
