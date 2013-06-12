@@ -17,7 +17,9 @@ To compile the Do & Follow source code simply follow these steps:
 
 To download these sources, you must obtain git and clone the app-dofollow repository.
 
+```shell 
 > git clone http://github.com/hablapps/app-dofollow <dofollow>
+```
 
 #### Install scala
 
@@ -43,7 +45,9 @@ $ sbt
 
 From sbt, you can run some tests with the test-only command:
 
+```shell 
 > test-only org.hablapps.dofollow.test.All_Speech
+```
 
 ## License
 
