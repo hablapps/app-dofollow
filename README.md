@@ -2,7 +2,7 @@ app-dofollow
 ============
 Do & FOLLOW APP
 
-This an implementation of a BPM software in the Speech programming language. The purpose of this implementation is simply to illustrate how the functional requirements of typical Web 2.0 apps can be programmed in Speech. Thus, we abstract away from non-functional concerns relating to the persistence, presentation and web layers, and focus instead on the business logic of a BPM. You can find explanations on the design of this app in the Speech user guide. Currently, the implementation is far from being complete, but it will eventually cover the 100% of these requirements. We promise!
+This is an implementation of a BPM software in the Speech programming language. The purpose of this implementation is simply to illustrate how the functional requirements of typical Web 2.0 apps can be programmed in Speech. Thus, we abstract away from non-functional concerns relating to the persistence, presentation and web layers, and focus instead on the business logic of a BPM. You can find explanations on the design of this app in the Speech user guide. Currently, the implementation is far from being complete, but it will eventually cover the 100% of these requirements. We promise!
 
 ## Run Online
 
