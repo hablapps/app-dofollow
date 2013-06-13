@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<title>Consolapp</title>
+
+	<link rel="stylesheet" href="http://api.speechlang.org/js/console/css/compiled/console-min.css">
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+
+	<div id="consolapp">
+		<header></header>
+		<section>
+			<div id="console">
+				<div id="top-section">
+					<table id="console-log"></table>
+				</div>
+				<div id="right-section">
+					<ul id="users-log"></ul>
+				</div>
+				<div id="bottom-section">
+					<div id="performer"></div>
+					<textarea id="console-input"></textarea>
+				</div>
+			</div>
+
+			<div id="login">
+				<ul class="tabs">
+					<li class="active" rel="login-form">Login</li>
+					<li rel="register-user-form">Register</li>
+					<li rel="register-top-form">Create top interaction</li>
+				</ul>
+
+				<div class="tab-container">
+					<form id="login-form">
+						<input type="text" id="coolID" placeholder="user@context" required />
+						<input type="submit" value="Log me in!" />
+					</form>
+
+					<form id="register-user-form">
+						<div class="left-side">
+							<input type="text" id="agent-name" placeholder="New user's name" required />
+							<input type="text" id="agent-type" placeholder="New user's type" required />
+							<input type="text" id="context-name" placeholder="New user's context CoolID" required />
+						</div>
+						<input type="submit" value="Register!" />
+					</form>
+
+					<form id="register-top-form">
+						<div class="left-side">
+							<input type="text" id="top-interaction-name" placeholder="New top interaction's name" required />
+							<input type="text" id="top-interaction-type" placeholder="New top interaction's type" required />
+						</div>
+						<input type="submit" value="Create!" />
+					</form>
+				</div>
+			</div>
+		</section>
+		<footer></footer>
+	</div>
+
+	<!-- SPEECH LIB, APPLICATION MODEL AND APP SCRIPTS -->
+	<script type="text/javascript" src="http://api.speechlang.org/js/speech-min.js"></script>
+	<script type="text/javascript" src="../_model"></script>
+	<script type="text/javascript" src="http://api.speechlang.org/js/console/console-min.js"></script>
+</body>
+</html>
