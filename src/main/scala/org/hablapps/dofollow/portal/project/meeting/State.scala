@@ -116,7 +116,7 @@ trait State{ this: speech.Program
 	trait MeetingState extends EntityStatus
 	case object Scheduled extends MeetingState
 	case object Rescheduled extends MeetingState
-	case object Undoned extends MeetingState 
+	case object Undone extends MeetingState 
 	case object Completed extends MeetingState
 
 	trait ZombieMeetingState extends EntityStatus
@@ -127,7 +127,7 @@ trait State{ this: speech.Program
 	declarer[Moderator].of[Meeting](Meeting._date)
 	    .permitted {
 	      case (mod, reu, newValorAtributo) => implicit state => 
-      		Some(reu.substatus.get != Undoned || reu.substatus.get != Completed)
+      		Some(reu.substatus.get != Undone || reu.substatus.get != Completed)
 	    }
 
     /** 	@declarer When the meeting isn't closed	*/
@@ -135,7 +135,7 @@ trait State{ this: speech.Program
 	declarer[Moderator].of[Meeting](Meeting._room)
 	    .permitted {
 	      case (mod, reu, newValorAtributo) => implicit state => 
-	      	Some(reu.substatus.get != Undoned || reu.substatus.get != Completed)
+	      	Some(reu.substatus.get != Undone || reu.substatus.get != Completed)
 	    }
 
     /** 	@declarer When the meeting isn't closed	*/
@@ -143,7 +143,7 @@ trait State{ this: speech.Program
 	declarer[Moderator].of[Meeting](Meeting._reason)
 	    .permitted {
 	      case (mod, reu, newValorAtributo) => implicit state => 
-	    	Some(reu.substatus.get != Undoned || reu.substatus.get != Completed) 
+	    	Some(reu.substatus.get != Undone || reu.substatus.get != Completed) 
 	    }
 
     /** 	@declarer When the meeting isn't closed	*/
@@ -452,7 +452,7 @@ trait State{ this: speech.Program
 	    /**		Only if the meeting isn't closed	*/
 
 		override def permitted(implicit state: State) =
-			Some(meeting.substatus.head != Completed && meeting.substatus.head != Undoned)
+			Some(meeting.substatus.head != Completed && meeting.substatus.head != Undone)
 	}
 	
 	implicit val CreateMinutes = builder[CreateMinutes]
@@ -478,7 +478,7 @@ trait State{ this: speech.Program
 		/**		Only if the meeting isn't closed	*/
 
 		override def permitted(implicit state: State) =
-			Some(meeting.substatus.head != Completed && meeting.substatus.head != Undoned)
+			Some(meeting.substatus.head != Completed && meeting.substatus.head != Undone)
 	}
 	
 	implicit val DestroyMinutes = builder[DestroyMinutes]
@@ -587,7 +587,7 @@ trait State{ this: speech.Program
 
 	    override def purpose(implicit state: State) = {
 	            Sequence(
-	                    Let(meeting, "substatus" , Undoned, true),
+	                    Let(meeting, "substatus" , Undone, true),
 	                    Finish(meeting)
 	            )
 	    }

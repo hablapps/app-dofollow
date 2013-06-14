@@ -143,7 +143,7 @@ class CreateMinutesTest(System: speech.System with DoFollowSystem with react.Deb
 		  obtained should be(getState())
 		}
 
-		it("Create Minutes in a undoned meeting") {
+		it("Create Minutes in a Undone meeting") {
 
 		  import System._
 		
@@ -163,7 +163,7 @@ class CreateMinutesTest(System: speech.System with DoFollowSystem with react.Deb
 		  										_date = 123,
 		    									_room = "3",
 		    									_reason = "Reason1",
-		    									_substatus = Some(Undoned)), project1)
+		    									_substatus = Some(Undone)), project1)
 		    moderator1 			<- Play3(Moderator(_persistent = true), admin1, meeting1)
 		  } yield (meeting1, moderator1))
 		
@@ -185,7 +185,7 @@ class CreateMinutesTest(System: speech.System with DoFollowSystem with react.Deb
 		  										_date = 123,
 		    									_room = "3",
 		    									_reason = "Reason1",
-		    									_substatus = Some(Undoned)), project1)
+		    									_substatus = Some(Undone)), project1)
 		    moderator1 			<- Play3(Moderator(_persistent = true), admin1, meeting1)
 		    create1 			<- Say(moderator1, meeting1, CreateMinutes(__new = Some(Minutes())))
 		    _ 					<- Done(create1, PROHIBITED)

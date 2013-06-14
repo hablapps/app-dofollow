@@ -162,7 +162,7 @@ trait Rules{ this: speech.Program
     */
 
     when {
-        case _Set(meeting: $[Meeting], SocialEntity._substatus, Undoned, true) if meeting.isA[Meeting] => implicit state =>
+        case _Set(meeting: $[Meeting], SocialEntity._substatus, Undone, true) if meeting.isA[Meeting] => implicit state =>
             Sequence(
                 For(meeting.attendees) {
                     case attendee if attendee.status.get == PLAYING => 

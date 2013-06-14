@@ -144,7 +144,7 @@ class DestroyMinutesTest(System: speech.System with DoFollowSystem with react.De
 		  obtained should be(getState())
 		}
 
-		it("Destroy Minutes in a undoned meeting") {
+		it("Destroy Minutes in a Undone meeting") {
 
 		  import System._
 		
@@ -164,7 +164,7 @@ class DestroyMinutesTest(System: speech.System with DoFollowSystem with react.De
 		  										_date = 123,
 		    									_room = "3",
 		    									_reason = "Reason1",
-		    									_substatus = Some(Undoned)), project1)
+		    									_substatus = Some(Undone)), project1)
 		    moderator1 			<- Play3(Moderator(_persistent = true), admin1, meeting1)
 		    minutes1 			<- NewR(Minutes(_creator = Some(moderator1), _uploadDate = 0.toLong, _persistent = true), meeting1)
 		  } yield (meeting1, moderator1, minutes1))
@@ -187,7 +187,7 @@ class DestroyMinutesTest(System: speech.System with DoFollowSystem with react.De
 		  										_date = 123,
 		    									_room = "3",
 		    									_reason = "Reason1",
-		    									_substatus = Some(Undoned)), project1)
+		    									_substatus = Some(Undone)), project1)
 		    moderator1 			<- Play3(Moderator(_persistent = true), admin1, meeting1)
 		    minutes1 			<- NewR(Minutes(_creator = Some(moderator1), _uploadDate = 0.toLong, _persistent = true), meeting1)
 		    destroy1 			<- Say(moderator1, meeting1, DestroyMinutes(_resource = Some(minutes1)))

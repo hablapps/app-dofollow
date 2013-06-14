@@ -274,7 +274,7 @@ class JoinAttendeeTest(System: speech.System with DoFollowSystem with react.Debu
 		  obtained should be(getState())
 		}
 
-		it("Join Attendee in a undoned meeting") {
+		it("Join Attendee in a Undone meeting") {
 
 		  import System._
 		
@@ -306,7 +306,7 @@ class JoinAttendeeTest(System: speech.System with DoFollowSystem with react.Debu
 		  										_date = 123,
 		    									_room = "3",
 		    									_reason = "Reason1",
-		    									_substatus = Some(Undoned)), project1)
+		    									_substatus = Some(Undone)), project1)
 		    moderator1 			<- Play3(Moderator(_persistent = true), admin1, meeting1)
 		    invitee1 			<- Play3(Invitee(_persistent = true), operator2, meeting1)
 		  } yield (meeting1, operator2))
@@ -341,7 +341,7 @@ class JoinAttendeeTest(System: speech.System with DoFollowSystem with react.Debu
 		  										_date = 123,
 		    									_room = "3",
 		    									_reason = "Reason1",
-		    									_substatus = Some(Undoned)), project1)
+		    									_substatus = Some(Undone)), project1)
 		    moderator1 			<- Play3(Moderator(_persistent = true), admin1, meeting1)
 		    invitee1 			<- Play3(Invitee(_persistent = true), operator2, meeting1)
 		    join1 				<- Say(operator2, meeting1, JoinAttendee(__new = Some(Attendee())))
@@ -383,7 +383,7 @@ class JoinAttendeeTest(System: speech.System with DoFollowSystem with react.Debu
 		  										_date = 123,
 		    									_room = "3",
 		    									_reason = "Reason1",
-		    									_substatus = Some(Undoned)), project1)
+		    									_substatus = Some(Undone)), project1)
 		    moderator1 			<- Play3(Moderator(_persistent = true), admin1, meeting1)
 		  } yield (meeting1, operator2))
 		

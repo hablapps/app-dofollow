@@ -76,9 +76,9 @@ trait Rules{ this: speech.Program
         				Finish(task)
     				)
         			
-        		case meeting: $[Meeting] if meeting.isA[Meeting] && meeting.substatus.get != Undoned && meeting.substatus.get != Completed => 
+        		case meeting: $[Meeting] if meeting.isA[Meeting] && meeting.substatus.get != Undone && meeting.substatus.get != Completed => 
         			Sequence(
-        				Let(meeting, "substatus", Undoned, true),
+        				Let(meeting, "substatus", Undone, true),
         				Finish(meeting)
     				)
     			case _ => ActionId()
