@@ -83,24 +83,19 @@ trait Rules{ this: speech.Program
                     else
                         ActionId()
                 },
-                if(t.launchType == "M")
-                    ActionId()
-                else{
-                    Sequence(
-                        LetWholeExtension(t, "launchType" , "A"),
-                        LetWholeExtension(t, "startDate" , now),
-                        {
-                        if(t.deadline != Some(addBusinessDays(now, t.duration)))
-                            Sequence(
-                                Let(t, "deadline" , addBusinessDays(now, t.duration), true),
-                                CalculateDeadlines(t.project.tasks.filter(tAux => tAux.substatus == Some(Waiting) && tAux.launchType == "A"))
-                            )
-                        else
-                            ActionId()
-                        }
-                    )
-                },
-                CheckTemporalDependencies(t)
+                Sequence(
+                    LetWholeExtension(t, "startDate" , now),
+                    {
+                    if(t.deadline != Some(addBusinessDays(now, t.duration)))
+                        Sequence(
+                            Let(t, "deadline" , addBusinessDays(now, t.duration), true),
+                            CalculateDeadlines(t.project.tasks.filter(tAux => tAux.substatus == Some(Waiting) && tAux.launchType == "A"))
+                        )
+                    else
+                        ActionId()
+                    },
+                    CheckTemporalDependencies(t)
+                )
             )
         }
 

@@ -162,7 +162,7 @@ class SetUpProjectTest(System: speech.System with DoFollowSystem with react.Debu
 		    _ 					<- Let(task1.context += dep1)
 		    _ 					<- Let(dep1.subinteraction += task1)
 		    task2 				<- Initiate2(Task(_persistent = true, _name = Some("t2"), _taskName = "Task 2", _description = "description 2",
-		    									_duration = 3, _substatus = Some(Waiting)), project1)
+		    									_duration = 3, _substatus = Some(Waiting), _launchType = "A", _deadline = Some(604800000)), project1)
 		    _ 					<- Let(task1.context += dep1)
 		    _ 					<- Let(dep1.subinteraction += task1)
 		    _ 					<- Let(task2.context += task1)

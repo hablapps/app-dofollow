@@ -37,7 +37,8 @@ trait Rules{ this: speech.Program
 	    case Performed(setUpTask1: SetUpTask) if setUpTask1.isA[SetUpTask] => implicit state =>
 	    	Sequence(
 	    		Let(setUpTask1.project.portal.departments.filter(_.name.get == setUpTask1.department).head.subinteraction += setUpTask1._new_entity.get),
-	    		Let(setUpTask1._new_entity.get.context += setUpTask1.project.portal.departments.filter(_.name.get == setUpTask1.department).head)  		
+	    		Let(setUpTask1._new_entity.get.context += setUpTask1.project.portal.departments.filter(_.name.get == setUpTask1.department).head),  
+                LetWholeExtension(setUpTask1._new_entity.get, "launchType", "M")		
 	    	)
 	  }
 	

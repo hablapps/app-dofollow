@@ -110,7 +110,7 @@ trait Actions { this: speech.Program
           newTask          <-   Initiate2(Task(_name = t.name, _taskName = t.taskName, _description = t.description, 
                                                   _substatus = Some(Waiting), _duration = t.duration,
                                                    _temporalDuration = t.temporalDuration,
-                                                  _waitingDate = t.waitingDate), 
+                                                  _waitingDate = t.waitingDate, _deadline = Some(0), _launchType = "A"), 
                                             setUpProject1._new_entity.head)
            _                  <- LinkTaskDepartment(newTask, setUpProject1.portal.departments.filter(_.name.get == t.department).head)
         } yield ()},

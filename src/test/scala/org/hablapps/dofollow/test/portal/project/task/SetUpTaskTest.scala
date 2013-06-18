@@ -104,6 +104,7 @@ class SetUpTaskTest(System: speech.System with DoFollowSystem with react.Debug) 
 		    task2 				<- Initiate2(Task(_persistent = true, _taskName = "Task 1", 
 		  										_description = "Description",
 		    									_duration = 3,
+		    									_launchType = "M",
 		    									_deadline = Some(259200000.toLong),
 		    									_substatus = Some(Waiting)), project1)
 		    _ 					<- Let(task2.context += dep1)
